@@ -8,16 +8,18 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="{% url 'home' %}"> Go Home <span class="sr-only"></span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
+          <a class="nav-link" href="{% url 'new' %}">Make a Posts</a>
+          {% if user.is_authenticted %}
+            
+            <a class="btn btn-outline-danger my-2 my-sm-0" href="{% url 'logout' %}">login</a>
+            <span class="nav-item nav-link"><i class="fa fa-user"></i> {{ user.username }}</span>
+          {% else %}
+            <a class="btn btn-outline-info my-2 my-sm-0" href="{% url 'signup' %}">signup</a>
+            <a class="btn btn-outline-success my-2 my-sm-0" href="{% url 'login' %}">logout</a>
+          {% endif %}
         </li>
       </ul>
     </div>

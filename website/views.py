@@ -5,6 +5,7 @@ from posts.models import Posts
 
 
 
+
 # Create your views here.
 def welcome(request):
     return render(request, "website/welcome.html",

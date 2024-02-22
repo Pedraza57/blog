@@ -1,0 +1,16 @@
+
+<div class="card text-center">
+    <div class="card-header">
+    <h2> {{post.title}} </h2>
+    </div>
+    <div class="card-body">
+    <h5 class="card-title"><p><a href="{% url 'detail' post.id %}"> {{post.body}}</a> </p></h5>
+    </div>
+    <div class="card-body">    
+    <p> {{post.body}} </p>
+    <hr>
+    <p>Author: {{post.author }}</p>
+    <a href="{% url 'delete' post.id %}" class="btn btn-danger btn-small">Delete post</a>
+    </div>
+    </div>
+</div>

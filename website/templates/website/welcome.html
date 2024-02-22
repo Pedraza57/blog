@@ -3,15 +3,7 @@
 
 {% block content %}
     {% for post in posts %}
-        <div class="card text-center">
-            <div class="card-header">
-            <h2> {{post.title}} </h2>
-            </div>
-            <div class="card-body">
-            <h5 class="card-title"><p> {{post.body}} </p></h5>
-            </div>
-            </div>
-        </div>
+        {% include 'posts/post.html' %}
     {% endfor%}
 {% endblock %}
 
